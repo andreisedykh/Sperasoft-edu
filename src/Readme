@@ -1,3 +1,3 @@
-Please note than Main class contains methods GetMin (Practice #1: Find the minimum) and ArraySearch (Practice #2: Search for an element in the array)
-Practice #3: Sort array - BubbleSort and SelectionSort
-Practice #4: Count element occurrences in a String - CountElement
+Please note than Main class contains methods GetMin.java (Practice #1: Find the minimum) and ArraySearch.java (Practice #2: Search for an element in the array)
+Practice #3: Sort array - BubbleSort.java and SelectionSort.java
+Practice #4: Count element occurrences in a String - CountElement.java
