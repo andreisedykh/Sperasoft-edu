@@ -8,5 +8,7 @@ public class Main {
 
         ArraySearch hui = new ArraySearch();
         hui.SearchArray();
+
+        
     }
 }
