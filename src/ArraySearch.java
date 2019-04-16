@@ -1,38 +1,54 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class ArraySearch {
 
     public static void SearchArray() {
-
+        System.out.println("\nEnter array size number");
         Scanner scan = new Scanner(System.in);
+        int arrayLength = scan.nextInt();
 
-        System.out.println("Enter array size number");
-        int arrayLength = scan.nextInt(); // вводим число = длине массива
+        while (arrayLength <= 0 || arrayLength > 256) {
+            System.out.println("Please enter a positive number between 1 and 256");
+            while (!scan.hasNextInt()) {
+                System.out.println("That's not a number!");
+                scan.next();
+            }
+            arrayLength = scan.nextInt();
+        }
+
+
+        // вводим число = длине массива
         int array[] = new int[arrayLength]; // объявляем массив равный введенному числу
-        /**it is a good practice to validate input data. For example, I still could enter -1 or 0 and program will crash then 
+        /**it is a good practice to validate input data. For example, I still could enter -1 or 0 and program will crash then
         (you could wrap console input by while cycle and validate if it is valid number -> exit, else - do input again) */
-        boolean isIntInArray = false;
+
+        Random random = new Random();
 
         for (int i = 0; i < arrayLength; i++) { // заполняем массив значениями
-            array[i] = i;                       /**you should generate random integer instead loop index. Please use new Random().nextInt(bound)
+            array[i] = random.nextInt(100);;/**you should generate random integer instead loop index. Please use new Random().nextInt(bound)
                                                 docs: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html#nextInt-int- */
             System.out.print(array[i] + " ");
             
         }
         
         System.out.println("\nEnter element you are searching for"); //its better to use \n instead of empty sout to reduce code size
-        int elementValue = scan.nextInt(); // вводим индекс искомого елемента
+        int elementValue = scan.nextInt();// вводим индекс искомого елемента
+        boolean isIntInArray = false;
 
         for (int i = 0; i < arrayLength; i++) {
             if (array[i] == elementValue) {
                 isIntInArray = true;
-                System.out.println("Element exist in array");
+                System.out.println(isIntInArray + ". Element exist in array");
+                break;
+            } else if (array[i] != elementValue) {
+                System.out.println(isIntInArray + ". Element does not exist in array");
+                break;
             }
 
         }
         /**in this case 'Element does not exist in array' will always appear (even if element was found)
         its better to do if/else structure to output valid string */
-        System.out.println(isIntInArray + ". Element does not exist in array");
 
         //TODO binary search
         //TODO (optional) it will be good if you deal with time execution and create some output about it (use Stopwatch or System.nanoTime)

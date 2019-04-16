@@ -6,7 +6,7 @@ public class SelectionSort {
 
     
     /** Bad naming (please use more intuitive naming)*/
-    private static void sorting(int arr[])
+    private static void selectionSorting(int arr[])
     {
         int n = arr.length;
 
@@ -14,15 +14,15 @@ public class SelectionSort {
         for (int i = 0; i < n-1; i++)
         {
             // Find the minimum element in unsorted array
-            int min_idx = i;
+            int minIdx = i;
             for (int j = i+1; j < n; j++)
-                if (arr[j] < arr[min_idx])
-                    min_idx = j;           /**Code of conduct: minIdx instead of min_idx*/
+                if (arr[j] < arr[minIdx])
+                    minIdx = j;           /**Code of conduct: minIdx instead of min_idx*/
 
             // Swap the found minimum element with the first
             // element
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
+            int temp = arr[minIdx];
+            arr[minIdx] = arr[i];
             arr[i] = temp;
         }
     }
@@ -38,13 +38,13 @@ public class SelectionSort {
     }
 
     // Driver code to test above
-    public static void main(String args[])
+    public static void selectionSort()
     {
       /**No need to create instance of object if you just use class as utility (all methods are static)
         In common case you do not work within main class (entry point) so each of instance method could be accessible from another (exclude static methods) */
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter array size number");
+        System.out.println("\nEnter array size number");
         int arrayLength;
         while ((arrayLength = scan.nextInt()) < 0) {
             System.out.println(String.format("%d - is a wrong number! Repeat the input", arrayLength));
@@ -60,7 +60,7 @@ public class SelectionSort {
         }
         System.out.print(Arrays.toString(arr));
 
-        sorting(arr);
+        selectionSorting(arr);
         System.out.print("\nAfter sorting\n");
         printArray(arr);
     }
