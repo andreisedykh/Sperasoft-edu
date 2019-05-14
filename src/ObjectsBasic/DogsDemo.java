@@ -8,7 +8,15 @@ public class DogsDemo {
 
     private static int dataIndex=1;
 
-    public static void main(String args[]){
+    public static void main(String args[]){ //в целом задание выполненно хорошо, но есть несколько кейсов, когда алгоритм
+        //крашится. Например, если инпут будет "10 Roma", то вылетит ArrayIndexOutOfBoundsException", или "10 Roma 2 Vasia", т.е 
+        //алгоритм крашится по паттерну, когда последняя часть инпута - имя без цифр.
+        
+        
+        
+        
+        
+        
         Scanner scanner = new Scanner(System.in);
         String testCase = "10 Penny small 2 big 10 5 Leonard 7";
 

@@ -7,7 +7,7 @@ public class TimeValidate {
     int second;
 //    int secondsSinceMidnight;
 
-    TimeValidate() {
+    TimeValidate() { //этот же конструктор будет создан по умолчанию, поэтому нет смысла его объявлять, только если бы не нужно было, например, переопределить дефолтные значения
     }
 
     public int getHour() {
