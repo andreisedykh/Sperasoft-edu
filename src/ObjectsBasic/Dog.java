@@ -9,10 +9,10 @@ public class Dog {
     private Size size;
 
     public enum Size{
-        big,
+        big, //енумы лучше писать с большой буквы
         small,
         medium;
-
+        //есть встроенный метод valueOf, который делает то же самое
         public static Size parseSize(String size){
             if(size.equals(Size.small.toString()))
                 return Size.small;

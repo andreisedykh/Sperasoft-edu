@@ -34,7 +34,7 @@ public class TestClass {
         Clock obj2 = new Clock(hour2);
         obj2.printTime();
         obj2.tickDown();
-        obj2.tick();
+        obj2.tick(); //лучше повторяющиеся действия выностьи в цикл 
         obj2.tick();
         obj2.tick();
         obj2.tick();
